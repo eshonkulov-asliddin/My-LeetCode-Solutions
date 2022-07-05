@@ -23,8 +23,22 @@ class Solution:
         # Recursion
         # Time Complexity: O(n)
         # Space Complexity: O(n)
-        def reverse(l, r):
-            if l < r:
-                s[l], s[r] = s[r], s[l]
-                reverse(l+1, r-1)
-        reverse(0, len(s)-1)                
+        # def reverse(l, r):
+        #     if l < r:
+        #         s[l], s[r] = s[r], s[l]
+        #         reverse(l+1, r-1)
+        # reverse(0, len(s)-1)                
+        
+        # Stack
+        # Time Complexity: O(n)
+        # Space Complexity: O(n)
+        stack = []
+        for i in s:
+            stack.append(i)
+       
+        i = 0
+        while stack:
+            s[i] = stack.pop()
+            i+=1
+            
+        
