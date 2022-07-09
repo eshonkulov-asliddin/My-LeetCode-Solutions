@@ -1,4 +1,8 @@
 class Solution:
+    
+    # Time Complexity: O(m*n)
+    # Space Complexity: O(1)
+    
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         starting_pixel = image[sr][sc]
         self.dfs(image, sr, sc, color, starting_pixel)
