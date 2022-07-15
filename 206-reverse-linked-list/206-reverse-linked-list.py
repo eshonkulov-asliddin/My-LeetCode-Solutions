@@ -5,6 +5,12 @@
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        '''
+            Time Complexity: O(n)
+            
+            Space Complexity: O(n)
+        '''
         cur = head
         prev = None
         
