@@ -4,6 +4,9 @@ class Solution:
         
         # Time Complexity: O(n log n)
         # Space Complexity: O(1)
+        
+        if len(s) != len(t):
+            return False
        
         hashmap = {}
         for i in range(len(s)):
