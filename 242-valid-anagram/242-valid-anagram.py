@@ -2,8 +2,8 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
 
         
-        # Time Complexity: O(n log n)
-        # Space Complexity: O(1)
+        # Time Complexity: O(n)
+        # Space Complexity: O(n)
         
         if len(s) != len(t):
             return False
