@@ -15,7 +15,7 @@ class Solution:
         right = head
         
         #move right n times
-        while n > 0 and right:
+        while n > 0:
             right = right.next
             n -= 1
         
