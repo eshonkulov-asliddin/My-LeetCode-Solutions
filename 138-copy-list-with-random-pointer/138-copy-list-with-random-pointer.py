@@ -18,7 +18,8 @@ class Solution:
         
         cur = head
         while cur:
-            oldToCopy[cur] = Node(cur.val)
+            copy = Node(cur.val)
+            oldToCopy[cur] = copy
             cur = cur.next
             
         cur = head
