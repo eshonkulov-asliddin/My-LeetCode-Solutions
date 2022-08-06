@@ -1,24 +1,46 @@
 class Solution:
+    '''
+    Time Complexity: O(log n)
+    Space Complexity: O(1)
+    ''' 
     
-        
-        
-    def isHappy(self, n: int) -> bool:
-        
-        def get_next(n):
+    def isHappy(self, n: int) -> bool:  
+        def get_next(number):
             total_sum = 0
-            while n > 0:
-                digit = n % 10
-                total_sum += digit**2
-                n //= 10
-            return total_sum    
+            while number > 0:
+                number, digit = divmod(number, 10)
+                total_sum += digit ** 2
+            return total_sum
+
+        slow_runner = n
+        fast_runner = get_next(n)
+        while fast_runner != 1 and slow_runner != fast_runner:
+            slow_runner = get_next(slow_runner)
+            fast_runner = get_next(get_next(fast_runner))
+        return fast_runner == 1
+    
+    '''
+    Time Complexity: O(log n)
+    Space Complexity: O(log n)
+    ''' 
+        
+#     def isHappy(self, n: int) -> bool:
+        
+#         def get_next(n):
+#             total_sum = 0
+#             while n > 0:
+#                 number, digit = divmod(number, 10)
+#                 total_sum += digit**2
                 
-        seen = set()
+#             return total_sum    
+                
+#         seen = set()
         
-        while n != 1 and n not in seen:
-            seen.add(n)
-            n = get_next(n)
+#         while n != 1 and n not in seen:
+#             seen.add(n)
+#             n = get_next(n)
         
-        return n == 1
+#         return n == 1
                 
         
         
