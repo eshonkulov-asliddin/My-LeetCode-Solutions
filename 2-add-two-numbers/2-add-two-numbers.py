@@ -14,6 +14,10 @@
 '''
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        '''
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        '''
         dummy = ListNode()
         cur = dummy
         carry = 0           
