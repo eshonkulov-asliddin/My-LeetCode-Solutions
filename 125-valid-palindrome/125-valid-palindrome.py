@@ -1,4 +1,10 @@
 class Solution:
+    '''
+    Two Pointer Without using built in function isalnum()
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    '''
+    
     def alphaNum(self, c):
             return (ord('A') <= ord(c) <= ord('Z') or
                     ord('a') <= ord(c) <= ord('z') or
@@ -19,12 +25,6 @@ class Solution:
             
             l, r = l + 1, r - 1
         return True    
-        
-        '''
-        Two Pointer Without using built in function isalnum()
-        Time Complexity: O(n)
-        Space Complexity: O(1)
-        '''
         
         
          
