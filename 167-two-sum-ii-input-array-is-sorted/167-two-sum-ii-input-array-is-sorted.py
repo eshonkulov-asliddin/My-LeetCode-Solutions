@@ -1,5 +1,61 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        '''
+        Hashmap
+        Time Complexiy: O(n)
+        Space Complexity: O(n)
+        
+        '''
+        d = dict()
+        
+        for i, k in enumerate(numbers):
+            if k in d:
+                return [d[k], i+1]
+            d[target-k] = i+1
+                
+        
+        '''
+        Brute Force
+        Time Complexiy: O(N2)
+        Space Complexity: O(1)
+        
+        '''
+        
+        # for i in range(len(numbers)):
+        #     for j in range(i+1, len(numbers)):
+        #         if numbers[i] + numbers[j] == target:
+        #             return [i+1, j+1]
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         # Brute Force 
         # Time Complexity: O(n2)
