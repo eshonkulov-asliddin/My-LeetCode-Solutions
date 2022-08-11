@@ -1,17 +1,36 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         '''
+        Two Pointer
+        Time Complexiy: O(n)
+        Space Complexity: O(1)
+        
+        '''
+        
+        r = len(numbers)-1
+        index_r = len(numbers)
+        
+        for l in range(len(numbers)):
+            if numbers[l] + numbers[r] == target:
+                return [l+1, index_r]
+            elif numbers[l] + numbers[r] > target:
+                index_r -= 1
+            
+            elif numbers[l] + numbers[r] < target:
+                continue
+        
+        '''
         Hashmap
         Time Complexiy: O(n)
         Space Complexity: O(n)
         
         '''
-        d = dict()
+#         d = dict()
         
-        for i, k in enumerate(numbers):
-            if k in d:
-                return [d[k], i+1]
-            d[target-k] = i+1
+#         for i, k in enumerate(numbers):
+#             if k in d:
+#                 return [d[k], i+1]
+#             d[target-k] = i+1
                 
         
         '''
