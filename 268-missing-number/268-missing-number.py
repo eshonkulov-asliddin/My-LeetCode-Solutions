@@ -3,12 +3,22 @@ class Solution:
         '''
         Time Complexity: O(n)
         Space Complexity: O(1)
+        
         '''
+   
+    #XOR
+    
+        res = 0
+        for i in range(len(nums)+1):
+            res ^= i
+        for num in nums:
+            res ^= num
+        return res
     #Math
-        n = len(nums)
-        expected = n * (n+1) // 2
-        actual = sum(nums)
-        return expected - actual
+        # n = len(nums)
+        # expected = n * (n+1) // 2
+        # actual = sum(nums)
+        # return expected - actual
     
     
     
