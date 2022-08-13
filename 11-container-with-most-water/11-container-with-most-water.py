@@ -8,7 +8,7 @@ class Solution:
         '''
         max_water = 0
         l, r = 0, len(height)-1
-        while l < r:
+        while l <= r:
             distance = r - l
             vertical_line = min(height[l], height[r])
             
