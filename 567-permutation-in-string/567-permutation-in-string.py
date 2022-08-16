@@ -38,7 +38,7 @@ class Solution:
             
             if s1Count[index] == s2Count[index]:
                 matches += 1
-            elif s2Count[index] + 1 == s1Count[index]:
+            elif s2Count[index] == s1Count[index] - 1:
                 matches -= 1
                 
             l += 1
