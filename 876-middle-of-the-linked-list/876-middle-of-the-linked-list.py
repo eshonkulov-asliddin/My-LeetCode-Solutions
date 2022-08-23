@@ -6,7 +6,21 @@
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        # Time Complexity: O(n log n)
+        '''
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        '''
+        slow, fast = head, head
+        
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow    
+    
+    
+    
+    
+    # Time Complexity: O(n log n)
         # Space Complexity: O(1)   
         
 #         cur = head
@@ -23,31 +37,7 @@ class Solution:
 #         head = cur  
 #         return head
 
-        # Fast and Slow approach
-        # Time Complexity: O(n)
-        # Space Complexity: O(1)
-        
-        slow = head
-        fast = head
-        
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-            
-        return slow    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
     
     
     
