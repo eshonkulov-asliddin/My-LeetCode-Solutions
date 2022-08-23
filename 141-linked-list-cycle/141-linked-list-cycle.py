@@ -6,21 +6,36 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        '''
+        Floyd'd Algorithm fast and slow
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        
+        '''
+        slow, fast = head, head
+        
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            
+            if slow == fast:
+                return True
+        return False                
         
         '''
         Time Complexity: O(n)
         Space Complexity: O(n)
         '''
-        hashmap = {}
+#         hashmap = {}
         
-        cur = head
-        while cur:
-            if cur not in hashmap:
-                hashmap[cur] = 1
-            else:
-                return True
-            cur = cur.next
-        return False    
+#         cur = head
+#         while cur:
+#             if cur not in hashmap:
+#                 hashmap[cur] = 1
+#             else:
+#                 return True
+#             cur = cur.next
+#         return False    
         
         
         
