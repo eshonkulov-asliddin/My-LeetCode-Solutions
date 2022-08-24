@@ -10,19 +10,18 @@ class Solution:
         Space Complexity: O(1)
         '''
         
-        dummy = ListNode(0)
-        dummy.next = head
-        
+        dummy = ListNode(next=head)
         prev = dummy
         cur = head
         
         while cur:
+            nxt = cur.next
+            
             if cur.val == val:
-                prev.next = cur.next
-                cur = cur.next
+                prev.next = nxt
             else:
                 prev = cur
-                cur = cur.next
+            cur = cur.next
                 
         return dummy.next  
     
