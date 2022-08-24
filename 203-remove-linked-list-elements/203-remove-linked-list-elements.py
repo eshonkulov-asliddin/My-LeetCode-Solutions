@@ -14,7 +14,7 @@ class Solution:
         dummy.next = head
         
         prev = dummy
-        cur = dummy.next
+        cur = head
         
         while cur:
             if cur.val == val:
