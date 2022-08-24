@@ -6,22 +6,35 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        if head is None:
-            return
+        '''
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        '''
         
-        dummy = ListNode(next=head)
-        prev = dummy.next
-        cur = head.next
         
+        cur = head
         while cur:
-            nxt = cur.next
-            if prev.val == cur.val:
-                prev.next = cur.next
-            else:
-                prev = cur
-            cur = nxt
+            while cur.next and cur.val == cur.next.val:
+                cur.next = cur.next.next
+            cur = cur.next   
+        return head    
             
-        return dummy.next     
+#         if head is None:
+#             return
+        
+#         dummy = ListNode(next=head)
+#         prev = dummy.next
+#         cur = head.next
+        
+#         while cur:
+#             nxt = cur.next
+#             if prev.val == cur.val:
+#                 prev.next = cur.next
+#             else:
+#                 prev = cur
+#             cur = nxt
+            
+#         return dummy.next     
                 
         
         
