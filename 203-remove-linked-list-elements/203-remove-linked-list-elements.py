@@ -9,17 +9,36 @@ class Solution:
         Time Complexity: O(n)
         Space Complexity: O(1)
         '''
-        dummy_head = ListNode(-1)
-        dummy_head.next = head
         
-        current_node = dummy_head
-        while current_node.next != None:
-            if current_node.next.val == val:
-                current_node.next = current_node.next.next
+        dummy = ListNode(0)
+        dummy.next = head
+        
+        prev = dummy
+        cur = dummy.next
+        
+        while cur:
+            if cur.val == val:
+                prev.next = cur.next
+                cur = cur.next
             else:
-                current_node = current_node.next
+                prev = cur
+                cur = cur.next
                 
-        return dummy_head.next
+        return dummy.next  
+    
+    
+    
+#         dummy_head = ListNode(-1)
+#         dummy_head.next = head
+        
+#         current_node = dummy_head
+#         while current_node.next != None:
+#             if current_node.next.val == val:
+#                 current_node.next = current_node.next.next
+#             else:
+#                 current_node = current_node.next
+                
+#         return dummy_head.next
             
             
             
