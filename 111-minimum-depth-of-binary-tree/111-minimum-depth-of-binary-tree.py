@@ -10,12 +10,12 @@ class Solution:
         if root is None:
             return 0 
         count = 0
-        queue = [root]
+        queue = deque([root])
         while queue:
             lenq = len(queue)
             count += 1
             for i in range(lenq):
-                node = queue.pop(0)
+                node = queue.popleft()
                 if node.left or node.right:
                     if node.left:
                         queue.append(node.left)
