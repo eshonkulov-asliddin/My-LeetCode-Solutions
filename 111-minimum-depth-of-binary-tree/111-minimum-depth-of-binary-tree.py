@@ -6,6 +6,10 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
+        '''
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        '''
         
         if root is None:
             return 0 
