@@ -7,6 +7,10 @@
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        '''
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+        '''
         while root:
             if root.val > p.val and root.val > q.val:
                 root = root.left
