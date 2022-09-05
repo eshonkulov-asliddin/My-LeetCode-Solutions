@@ -6,6 +6,10 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        '''
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        '''
         if not root:
             return
         stack = [root]
