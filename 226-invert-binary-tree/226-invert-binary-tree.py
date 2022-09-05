@@ -12,13 +12,27 @@ class Solution:
         '''
         if not root:
             return
-        # recursive dfs
-        tmp = root.left
-        root.left = root.right
-        root.right = tmp
-        left = self.invertTree(root.left) 
-        right = self.invertTree(root.right)
+        # bfs
+        queue = deque([root])
+        while queue:
+            
+            node = queue.popleft()
+            tmp = node.left
+            node.left = node.right
+            node.right = tmp
+            if node.left:
+                queue.append(node.left)
+            if node.right:    
+                queue.append(node.right)
+                
         return root
+        # recursive dfs
+        # tmp = root.left
+        # root.left = root.right
+        # root.right = tmp
+        # left = self.invertTree(root.left) 
+        # right = self.invertTree(root.right)
+        # return root
 #         #iterative dfs
 #         stack = [root]
 #         while stack:
