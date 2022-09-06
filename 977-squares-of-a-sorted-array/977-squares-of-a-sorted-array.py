@@ -2,50 +2,23 @@ from collections import deque
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         
-#         Linear Search
-#         Time Complexity: O(n2)
-#         Space Complexity: O(n)
-        # ans = []
-        # for i in nums:
-        #     ans.append(i**2)
-        # for i in range(len(ans)):
-        #     for j in range(i+1, len(ans)):
-        #         if ans[i] > ans[j]:
-        #             ans[j], ans[i] = ans[i], ans[j]
-        # return ans    
+        '''
+        [-4,-1,0,3,10]
+         -> 
         
-#         Two Pointer and built in deque
-#         Time Complexity: O(n)
-#         Space Complexity: O(n)        
-            
-#         i, j = 0, len(nums)-1 
-#         ans = deque()
+        res = [121, 9, 9,  4, 49,  ]
         
-#         while i <= j:
-#             left, right = abs(nums[i]), abs(nums[j])
-#             if left > right :
-#                 ans.appendleft(left**2)
-#                 i += 1
-#             else:
-#                 ans.appendleft(right**2)
-#                 j -= 1
-#         return ans 
-
-#         Two Pointer
-#         Time Complexity: O(n)
-#         Space Complexity: O(n) 
-    
-        i, j = 0, len(nums)-1 
-        ans = [0] * len(nums)
         
-        while i <= j:
-            left, right = abs(nums[i]), abs(nums[j])
-            if left > right :
-                ans[j-i] = left**2
-                i += 1
+        '''
+        l, r = 0, len(nums)-1
+        res = []
+        while l <= r:
+            if abs(nums[l]) > abs(nums[r]):
+                res.append(abs(nums[l]) ** 2)
+                l += 1
             else:
-                ans[j-i] = right**2
-                j -= 1
-        return ans 
-    
-    
+                res.append(abs(nums[r]) ** 2)
+                r -= 1
+        return res[::-1]        
+            
+                    
