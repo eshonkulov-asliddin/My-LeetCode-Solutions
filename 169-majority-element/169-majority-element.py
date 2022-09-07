@@ -6,15 +6,10 @@ class Solution:
         '''
         res, count = 0, 0
         for num in nums:
-            if num != res:
-                if count:
-                    count -= 1
-                else:
-                    res = num
-                    count = 1
-            else:
-                count += 1
-        return res        
+            if count == 0:
+                res = num
+            count += (1 if num == res else -1)  
+        return res    
         # d = {}
         # maxCount, res = 0, 0
         # for num in nums:
