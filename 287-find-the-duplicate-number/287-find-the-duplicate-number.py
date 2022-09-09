@@ -1,12 +1,14 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         '''
-        Time Complexity: O(n)
-        Space Complexity: O(n)
+        O(n)
+        O(1)
+        
         '''
-        d = dict()
-        for idx, val in enumerate(nums):
-            if val not in d:
-                d[val] = idx
-                continue
-            return val    
+        def store(nums, cur):
+            if cur == nums[cur]:
+                return cur
+            nxt = nums[cur]
+            nums[cur] = cur
+            return store(nums, nxt)
+        return store(nums, 0)
