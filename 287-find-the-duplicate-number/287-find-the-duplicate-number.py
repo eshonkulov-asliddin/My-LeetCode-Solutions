@@ -5,10 +5,8 @@ class Solution:
         O(1)
         
         '''
-        def store(nums, cur):
-            if cur == nums[cur]:
+        while True:
+            cur = nums[0]
+            if nums[0] == nums[cur]:
                 return cur
-            nxt = nums[cur]
-            nums[cur] = cur
-            return store(nums, nxt)
-        return store(nums, 0)
+            nums[0], nums[cur] = nums[cur], nums[0]
