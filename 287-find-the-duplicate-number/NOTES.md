@@ -1,1 +1,1 @@
-​
+Pigeon Hole Principle is used to solve this question. According to the question, we have n + 1 elements in the range (1, n) inclusive where one of the element is the duplicate.
