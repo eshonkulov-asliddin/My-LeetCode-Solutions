@@ -2,22 +2,31 @@ class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
+        Time: O(m) where m is the number of cell
+        Space: O(1)
         """
         
-        # transpose
-        self.transpose(matrix)
-        # reverse
-        self.reverse(matrix)
+        l, r = 0, len(matrix) - 1
         
-        
-    def transpose(self, matrix):
-        n = len(matrix)
-        for i in range(n):
-            for j in range(i+1, n):
-                matrix[i][j], matrix[j][i] = matrix[j][i],matrix[i][j]
-    def reverse(self, matrix):
-        n = len(matrix)
-        for i in range(n):
-            for j in range(n // 2):
-                matrix[i][j], matrix[i][-j-1] = matrix[i][-j-1], matrix[i][j]
+        while l < r:
+            for i in range(r - l):
+                top, bottom = l, r
+                
+                # save the top left i
+                topLeft = matrix[top][l+i]
+                
+                # update top left with bottom left
+                matrix[top][l+i] = matrix[bottom-i][l]
+                
+                #update bottom left with bottom right
+                matrix[bottom - i][l] = matrix[bottom][r-i]
+                
+                #update bottom right with top right
+                matrix[bottom][r-i] = matrix[top+i][r]
+                
+                # update top right with top left
+                matrix[top + i][r] = topLeft
+            r -= 1
+            l += 1
             
+                
