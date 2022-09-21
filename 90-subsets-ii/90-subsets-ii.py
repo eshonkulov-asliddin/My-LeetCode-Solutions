@@ -1,5 +1,9 @@
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        '''
+        T: O(n*2n)
+        S: O(n)
+        '''
         res = []
         nums.sort()
         
