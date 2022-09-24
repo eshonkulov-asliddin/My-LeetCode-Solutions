@@ -4,7 +4,6 @@ class Solution(object):
         :type s: str
         :rtype: int
         
-        "MCMXCIV"
         """
         
         roman = {
@@ -17,17 +16,29 @@ class Solution(object):
             'M': 1000,
         }
         
-        output = 0
-        num = 0
-        for i in range(len(s)-1):
-            if roman[s[i]] >= roman[s[i+1]]:
-                cur = roman[s[i]]
-                output += cur
+        res = 0
+        temp = 0
+        for i in range(len(s)-1, -1, -1):
+            cur = roman[s[i]]
+            if cur >= temp:
+                res += cur
+                temp = cur
             else:
-                cur = roman[s[i]] * -1
-                output += cur
+                res -= cur
+                temp = cur
+        return res        
+                
         
-        output += roman[s[-1]]
+#         output = 0
+#         for i in range(len(s)-1):
+#             if roman[s[i]] >= roman[s[i+1]]:
+#                 cur = roman[s[i]]
+#                 output += cur
+#             else:
+#                 cur = roman[s[i]] * -1
+#                 output += cur
         
-        return output        
+#         output += roman[s[-1]]
+        
+#         return output        
                 
