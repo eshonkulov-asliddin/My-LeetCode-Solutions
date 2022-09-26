@@ -6,20 +6,21 @@ class Solution:
         Space Complexity: O(n)
         '''
         stack = []
+        
         brackets = {
-            ']': '[',
-            ')': '(',
-            '}': '{'
+            ")": '(',
+            "]": "[",
+            "}": "{"
         }
-        for char in s:
-            if char not in brackets:
-                stack.append(char)
-                continue
-                
-            if not stack:
-                return False
-            last_opened = stack.pop()
-            if last_opened != brackets[char]:
-                return False
-
-        return not stack
+        
+        for i in s:
+            if i not in brackets:
+                stack.append(i)
+            else:
+                if stack: 
+                    cur = stack.pop()
+                    if cur != brackets[i]:
+                        return False
+                else:
+                    return False    
+        return len(stack) == 0       
