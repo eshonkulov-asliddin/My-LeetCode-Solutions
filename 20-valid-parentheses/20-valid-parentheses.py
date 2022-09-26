@@ -16,11 +16,12 @@ class Solution:
         for i in s:
             if i not in brackets:
                 stack.append(i)
-            else:
-                if stack: 
-                    cur = stack.pop()
-                    if cur != brackets[i]:
-                        return False
-                else:
-                    return False    
+                continue
+                
+            if not stack: return False
+            
+            cur = stack.pop()
+            if cur != brackets[i]:
+                return False
+                
         return len(stack) == 0       
