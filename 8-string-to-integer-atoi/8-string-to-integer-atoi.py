@@ -13,19 +13,20 @@ class Solution:
         elif s[i] == '+':
             i += 1
         
-        num = ""
+        parsed = 0
         while i < len(s):
-            if not s[i].isdigit():
+            cur = s[i]  
+            if not cur.isdigit():
                 break
-            num += s[i]   
+            parsed = parsed * 10 + int(cur) 
             i += 1
             
-        if not num:
-            return 0
-        if int(num) >= 2147483648 and sign == -1:
-            num = 2147483648 
-        elif int(num) >= 2147483648:
-            num = 2147483648 - 1 
-        return int(num) * sign   
+        parsed *= sign
+        if parsed > 2 ** 31-1:
+            return 2 ** 31 -1
+        elif parsed < -2 ** 31:
+            return -2 ** 31
+        else:
+            return parsed
                 
                 
